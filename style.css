@@ -1,0 +1,76 @@
+/* Importa il font Roboto da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Definizione delle variabili CSS */
+:root {
+  --primary-color: #202124; /* Colore primario (Blu) */
+  --secondary-color: #B0B0B0; /* Colore secondario (Rosso) */
+  --background-color: #f2f2f2; /* Colore di sfondo  */
+}
+
+/* Stile generale */
+body {
+  font-family: 'Roboto', Arial, sans-serif; /* Utilizza il font definito */
+  background-color: var(--background-color); /* Colore di sfondo */
+  color: var(--text-color); /* Colore del testo */
+}
+
+h1{
+    font-weight: 600;
+}
+
+
+
+/* Classi per il colore del testo */
+.tx-primary {
+    color: var(--primary-color); /* Colore primario */
+  }
+  
+  .tx-secondary {
+    color: var(--secondary-color); /* Colore secondario  */
+  }
+  .tx-white{
+    color: var(--background-color)
+  }
+  /* Classi per il colore di sfondo */
+  .bag-primary {
+    background-color: var(--primary-color); /* Colore primario */
+  }
+  
+  .bag-secondary {
+    background-color: var(--secondary-color); /* Colore secondario */
+  }
+
+  .btn:hover{
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+  }
+
+
+  .logo{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+
+  .custom-textarea {
+    width: 100%; /* Imposta la larghezza desiderata */
+    height: 250px; /* Imposta l'altezza desiderata */
+    resize: none; /* Disabilita il ridimensionamento */
+    padding: 10px; /* Padding interno per migliorare l'aspetto */
+    border: 1px solid var(--primary-color); /* Bordo per il textarea */
+    border-radius: 4px; /* Angoli arrotondati */
+    outline: none;
+    font-size: 16px; /* Dimensione del testo */
+}
+
+.pd{
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #74C0FC;
+  border-radius: 50%;
+  cursor: pointer;
+}
