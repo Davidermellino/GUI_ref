@@ -63,3 +63,14 @@ h1{
     outline: none;
     font-size: 16px; /* Dimensione del testo */
 }
+
+.pd{
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #74C0FC;
+  border-radius: 50%;
+  cursor: pointer;
+}
