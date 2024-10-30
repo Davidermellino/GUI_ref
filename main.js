@@ -1,3 +1,5 @@
+import  extract_titles  from "./function_js/extract_title.js";
+
 let compute_placeholder = document.querySelector("#comp_placeholder");
 let container_provided_by_user_elements =
   document.querySelector("#ct_prov_by_user");
@@ -9,7 +11,8 @@ let getref = document.querySelector("#getref");
 let usr_ref = document.querySelector("#usr_ref");
 
 let dropdown = document.querySelector("#dropdownSelect");
-let format_option = document.querySelector("#format_option");
+
+let result = document.querySelector("#result");
 
 // abilito tooltip
 const tooltipTriggerList = document.querySelectorAll(
@@ -39,16 +42,29 @@ radios.forEach((radio, index) => {
   });
 });
 
-// stampo il titolo in base al formato della biografia
-getref.addEventListener("click", () => {
-  if (radios[1].checked) {
-    selected_format = dropdown.value
-    if (selected_format === "1") {
-      console.log("Hai selezionato lo stile APA.");
-    } else if (selected_format === "2") {
-      console.log("Hai selezionato Bibliatex.");
-    } else {
-      console.log("Seleziona un formato di riferimento.");
-    }
+// stampo i titoli in base al formato della biografia
+getref.addEventListener("click", () => { //al click di get references
+  let titles = []
+  let format = dropdown.value
+  if (radios[1].checked) { // se seleziona provided by user
+      titles = extract_titles(format)      
   }
+  //per ogni titolo creo una riga nel div "risultato"
+  result.innerHTML = ""; //lo svuoto per non sovrapporre al successivo click
+  titles.forEach(title => {
+    let div = document.createElement("div")
+    div.classList.add("row")
+    div.classList.add("my-3")
+    div.classList.add("border-bottom")
+    div.classList.add("border-black")
+    div.innerHTML = `
+        <div class="col-8 align-self-center">
+          <p class="m-0">${title}</p>
+        </div>
+        <div class="col-4 d-flex align-items-center justify-content-center">
+            <img src=${format == 1 ? "./assets/APA_icon.jpeg" : "./assets/Bibtex_icon.jpg"} alt="" class="format-logo mb-2">
+        </div>
+    `
+    result.appendChild(div)
+  });
 });
