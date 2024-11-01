@@ -74,3 +74,11 @@ h1{
   border-radius: 50%;
   cursor: pointer;
 }
+
+/* logo dei vari formati */
+.format-logo{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
