@@ -31,6 +31,12 @@ textarea.addEventListener("blur", () => {
   }
 });
 
+
+//l'utente ha cliccato compute placeholder (vengono aggiunti i cit) e lo segnalo
+compute_placeholder.addEventListener("click", () => { //al click di place holder
+  textarea.value+= "aggiunti i cit"
+});
+
 // Verifico se i radio button status e prov cambiano per far apparire la sezione per l'inserimento
 radios.forEach((radio, index) => {
   radio.addEventListener("change", () => {
@@ -67,4 +73,12 @@ getref.addEventListener("click", () => { //al click di get references
     `
     result.appendChild(div)
   });
+
+  //selezionato status per GetRef
+  if(radios[0].checked) { // se seleziona status
+    //result.innerHTML = "";
+    let parag = document.createElement("p")
+    parag.innerHTML = "hai selezionato status"
+    result.appendChild(parag)
+  }
 });
