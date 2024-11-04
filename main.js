@@ -30,13 +30,16 @@ textarea.addEventListener("blur", () => {
     div_getref.classList.remove("d-none")
   } else {
     compute_placeholder.classList.remove("d-none");
+    div_getref.classList.add("d-none")
+
   }
 });
 
 
 //l'utente ha cliccato compute placeholder (vengono aggiunti i cit) e lo segnalo
 compute_placeholder.addEventListener("click", () => { //al click di place holder
-  textarea.value+= "aggiunti i cit"
+  textarea.value+= "[cit]"
+  div_getref.classList.remove("d-none")
 });
 
 // Verifico se i radio button status e prov cambiano per far apparire la sezione per l'inserimento
