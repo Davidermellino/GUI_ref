@@ -9,6 +9,7 @@ let textarea = document.querySelector("#first_ta");
 
 let getref = document.querySelector("#getref");
 let usr_ref = document.querySelector("#usr_ref");
+let div_getref = document.querySelector("#div-getref");
 
 let dropdown = document.querySelector("#dropdownSelect");
 
@@ -26,6 +27,7 @@ const tooltipList = [...tooltipTriggerList].map(
 textarea.addEventListener("blur", () => {
   if (textarea.value.includes("[cit]")) {
     compute_placeholder.classList.add("d-none");
+    div_getref.classList.remove("d-none")
   } else {
     compute_placeholder.classList.remove("d-none");
   }
@@ -78,7 +80,7 @@ getref.addEventListener("click", () => { //al click di get references
   if(radios[0].checked) { // se seleziona status
     //result.innerHTML = "";
     let parag = document.createElement("p")
-    parag.innerHTML = "hai selezionato status"
+    parag.innerHTML = "hai selezionato Scopus"
     result.appendChild(parag)
   }
 });

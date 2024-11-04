@@ -32,13 +32,41 @@
         <div class="col-3 d-flex align-items-center">
           <div
             class="pd"
-            data-bs-toggle="tooltip"
-            data-bs-placement="right"
-            title="Some information about the tool"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
           >
             <a
-              ><i class="fa-solid fa-question fa-2xl" style="color: #74c0fc"></i
+              ><i
+                class="fa-solid fa-question fa-2xl"
+                
+                style="color: #74c0fc"
+              ></i
             ></a>
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Cosa fa?
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">BLA BLA</div>
+                 
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -54,16 +82,30 @@
           placeholder="Write here..."
         ></textarea>
         <div class="col-6 p-0 d-none" id="comp_placeholder">
-          <button class="btn bag-secondary mt-2">Compute placeholder</button>
+          <button class="btn bag-secondary mt-2">Compute Placeholders</button>
         </div>
       </div>
 
       <!-- Actions and options for reference types -->
-      <div class="row w-50 mt-2">
+      <!-- Dropdown menu for additional actions -->
+      <div class="d-none row w-50 mt-3" id="ct_prov_by_user">
+        <select class="form-select" id="dropdownSelect">
+          <option selected id="format_option">References format</option>
+          <option value="1">APA style</option>
+          <option value="2">Bibliatex</option>
+        </select>
+        <textarea
+          id="usr_ref"
+          class="custom-textarea"
+          placeholder="Write your references..."
+        ></textarea>
+      </div>
+
+      <div class="row w-50 mt-2 d-none" id="div-getref">
         <!-- Button to get references -->
         <div class="col-6 m-0 p-0">
           <button id="getref" class="btn bag-secondary ms-auto">
-            Get references
+            Get Citations
           </button>
         </div>
 
@@ -79,7 +121,7 @@
               checked
             />
             <label class="form-check-label" for="flexRadioDefault1">
-              Status
+              Scopus
             </label>
           </div>
 
@@ -98,23 +140,12 @@
         </div>
       </div>
 
-      <!-- Dropdown menu for additional actions -->
-      <div class="d-none row w-50 mt-3" id="ct_prov_by_user">
-        <select class="form-select" id="dropdownSelect">
-          <option selected id="format_option">References format</option>
-          <option value="1">APA style</option>
-          <option value="2">Bibliatex</option>
-        </select>
-        <textarea
-          id ="usr_ref"
-          class="custom-textarea"
-          placeholder="Write your references..."
-        ></textarea>
-      </div>
-
       <!-- Display area for the result -->
-      <div class="row border border-black w-50 mt-5 p-3 rounded-4" id="result">
-        risultato
+       <div class="row mt-5">
+        <h3 class="">Risultato</h3>
+       </div>
+      <div class="row border border-black w-50 p-3 rounded-4" id="result">
+        
       </div>
     </div>
 
@@ -127,7 +158,7 @@
 
     <!-- Link to external JavaScript file for additional functionality -->
     <script type="module" src="main.js"></script>
-    
+
     <!-- Fontawesome -->
     <script
       src="https://kit.fontawesome.com/f571261d1b.js"
