@@ -1,4 +1,6 @@
-import  extract_titles  from "./function_js/extract_title.js";
+import extract_titles from "./function_js/extract_title.js";
+import print_result from "./function_js/printResult.js";
+
 
 let compute_placeholder = document.querySelector("#comp_placeholder");
 let container_provided_by_user_elements =
@@ -22,6 +24,9 @@ const tooltipTriggerList = document.querySelectorAll(
 const tooltipList = [...tooltipTriggerList].map(
   (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
 );
+//abilito i popover
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
 // veririco se [cit] occore nel textbox iniziale per far apparire compute placeholder o meno
 textarea.addEventListener("blur", () => {
@@ -38,7 +43,7 @@ textarea.addEventListener("blur", () => {
 
 //l'utente ha cliccato compute placeholder (vengono aggiunti i cit) e lo segnalo
 compute_placeholder.addEventListener("click", () => { //al click di place holder
-  textarea.value+= "[cit]"
+  textarea.value += "[cit]"
   div_getref.classList.remove("d-none")
 });
 
@@ -56,34 +61,30 @@ radios.forEach((radio, index) => {
 // stampo i titoli in base al formato della biografia
 getref.addEventListener("click", () => { //al click di get references
   let titles = []
+
   let format = dropdown.value
   if (radios[1].checked) { // se seleziona provided by user
-      titles = extract_titles(format)      
+    titles = extract_titles(format)
+    print_result(titles, format)
   }
-  //per ogni titolo creo una riga nel div "risultato"
-  result.innerHTML = ""; //lo svuoto per non sovrapporre al successivo click
-  titles.forEach(title => {
-    let div = document.createElement("div")
-    div.classList.add("row")
-    div.classList.add("my-3")
-    div.classList.add("border-bottom")
-    div.classList.add("border-black")
-    div.innerHTML = `
-        <div class="col-8 align-self-center">
-          <p class="m-0">${title}</p>
-        </div>
-        <div class="col-4 d-flex align-items-center justify-content-center">
-            <img src=${format == 1 ? "./assets/APA_icon.jpeg" : "./assets/Bibtex_icon.jpg"} alt="" class="format-logo mb-2">
-        </div>
-    `
-    result.appendChild(div)
-  });
+
 
   //selezionato status per GetRef
-  if(radios[0].checked) { // se seleziona status
-    //result.innerHTML = "";
-    let parag = document.createElement("p")
-    parag.innerHTML = "hai selezionato Scopus"
-    result.appendChild(parag)
+  if (radios[0].checked) { // se seleziona status
+
+    fetch("risultato.json") // prendo dal file JSON i titoli 
+      .then((response) => response.json())
+      .then((data) => {
+
+        data.citazioni.forEach((citazione) => {
+
+          titles.push(citazione.testo) //li aggiungo alla lista
+          
+        });
+        
+        print_result(titles, 0) //format 0 = APE
+      })
+
   }
+
 });

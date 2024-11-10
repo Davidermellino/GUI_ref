@@ -1,0 +1,29 @@
+{
+    "citazioni": [
+      {
+        "id": 1,
+        "numCit": 1,
+        "autore": "Albert Einstein",
+        "testo": "La logica ti porterà da A a B. L'immaginazione ti porterà ovunque.",
+        "data": "1929",
+        "categoria": "Creatività"
+      },
+      {
+        "id": 2,
+        "numCit": 1,      
+        "autore": "Mahatma Gandhi",
+        "testo": "Sii il cambiamento che vuoi vedere nel mondo.",
+        "data": "1913",
+        "categoria": "Pace"
+      },
+      {
+        "id": 3,
+        "numCit": 2,
+        "autore": "Mark Twain",
+        "testo": "I 20 anni più recenti della tua vita ti insegnano più di qualsiasi altro periodo.",
+        "data": "1901",
+        "categoria": "Esperienza"
+      }
+    ]
+  }
+  
