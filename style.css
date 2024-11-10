@@ -20,7 +20,6 @@ h1{
 }
 
 
-
 /* Classi per il colore del testo */
 .tx-primary {
     color: var(--primary-color); /* Colore primario */
@@ -81,4 +80,17 @@ h1{
   width: 50px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+/* pulsante per far apparire le altre cit */
+.cit_choice_btn{
+  color: #74C0FC;
+  cursor: pointer;
+}
+/* testo del risultato  */
+.text-result{
+
+    max-height: 75px; /* Imposta l'altezza massima */
+    overflow-y: auto;   /* Abilita lo scroll verticale */
+
 }

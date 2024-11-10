@@ -1,29 +1,92 @@
 {
-    "citazioni": [
-      {
-        "id": 1,
-        "numCit": 1,
-        "autore": "Albert Einstein",
-        "testo": "La logica ti porterà da A a B. L'immaginazione ti porterà ovunque.",
-        "data": "1929",
-        "categoria": "Creatività"
-      },
-      {
-        "id": 2,
-        "numCit": 1,      
-        "autore": "Mahatma Gandhi",
-        "testo": "Sii il cambiamento che vuoi vedere nel mondo.",
-        "data": "1913",
-        "categoria": "Pace"
-      },
-      {
-        "id": 3,
-        "numCit": 2,
-        "autore": "Mark Twain",
-        "testo": "I 20 anni più recenti della tua vita ti insegnano più di qualsiasi altro periodo.",
-        "data": "1901",
-        "categoria": "Esperienza"
-      }
-    ]
-  }
-  
+  "citazioni": [
+    {
+      "id": 1,
+      "numCit": 1,
+      "autore": "Albert Einstein",
+      "testo": "logica ti porterà da A a B. L'immagLainazione ti porterà ovunque.",
+      "data": "1929",
+      "categoria": "Creatività"
+    },
+    {
+      "id": 1,
+      "numCit": 2,
+      "autore": "Albert Einstein",
+      "testo": "L'immaginazione è più importante della conoscenza.",
+      "data": "1929",
+      "categoria": "Creatività"
+    },
+    {
+      "id": 1,
+      "numCit": 3,
+      "autore": "Albert Einstein",
+      "testo": "L'ii enlknconoscenza.",
+      "data": "1929",
+      "categoria": "Creatività"
+    },
+    {
+      "id": 2,
+      "numCit": 1,
+      "autore": "Mahatma Gandhi",
+      "testo": "Sii il cambiamento che vuoi vedere nel mondo.",
+      "data": "1913",
+      "categoria": "Pace"
+    },
+    {
+      "id": 2,
+      "numCit": 2,
+      "autore": "Mahatma Gandhi",
+      "testo": "Diventa tu stesso il cambiamento che desideri vedere attorno a te.",
+      "data": "1913",
+      "categoria": "Pace"
+    },
+    {
+      "id": 3,
+      "numCit": 1,
+      "autore": "Mark Twain",
+      "testo": "I 20 anni più recenti della tua vita ti insegnano più di qualsiasi altro periodo.",
+      "data": "1901",
+      "categoria": "Esperienza"
+    },
+    {
+      "id": 3,
+      "numCit": 2,
+      "autore": "Mark Twain",
+      "testo": "Gli ultimi vent'anni di vita contano più di tutti i precedenti.",
+      "data": "1901",
+      "categoria": "Esperienza"
+    },
+    {
+      "id": 4,
+      "numCit": 1,
+      "autore": "Confucio",
+      "testo": "La nostra più grande gloria non sta nel non cadere mai, ma nel rialzarci ogni volta che cadiamo.",
+      "data": "500 a.C.",
+      "categoria": "Resilienza"
+    },
+    {
+      "id": 4,
+      "numCit": 2,
+      "autore": "Confucio",
+      "testo": "Non conta quante volte cadiamo, ma quante volte ci rialziamo.",
+      "data": "500 a.C.",
+      "categoria": "Resilienza"
+    },
+    {
+      "id": 5,
+      "numCit": 1,
+      "autore": "Oscar Wilde",
+      "testo": "Sii te stesso; tutti gli altri sono già occupati.",
+      "data": "1890",
+      "categoria": "Autenticità"
+    },
+    {
+      "id": 6,
+      "numCit": 1,
+      "autore": "Lao Tzu",
+      "testo": "Un viaggio di mille miglia comincia con un passo.",
+      "data": "600 a.C.",
+      "categoria": "Determinazione"
+    }
+  ]
+}

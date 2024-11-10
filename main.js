@@ -1,5 +1,6 @@
 import extract_titles from "./function_js/extract_title.js";
 import print_result from "./function_js/printResult.js";
+import cerca_cit from "./function_js/cerca_[cit].js";
 
 
 let compute_placeholder = document.querySelector("#comp_placeholder");
@@ -28,17 +29,9 @@ const tooltipList = [...tooltipTriggerList].map(
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
-// veririco se [cit] occore nel textbox iniziale per far apparire compute placeholder o meno
-textarea.addEventListener("blur", () => {
-  if (textarea.value.includes("[cit]")) {
-    compute_placeholder.classList.add("d-none");
-    div_getref.classList.remove("d-none")
-  } else {
-    compute_placeholder.classList.remove("d-none");
-    div_getref.classList.add("d-none")
 
-  }
-});
+// veririco se [cit] occore nel textbox iniziale per far apparire compute placeholder o meno
+cerca_cit(textarea, compute_placeholder, div_getref)
 
 
 //l'utente ha cliccato compute placeholder (vengono aggiunti i cit) e lo segnalo
@@ -76,15 +69,13 @@ getref.addEventListener("click", () => { //al click di get references
       .then((response) => response.json())
       .then((data) => {
 
-        data.citazioni.forEach((citazione) => {
+        // data.citazioni.forEach((citazione) => {
 
-          titles.push(citazione.testo) //li aggiungo alla lista
+        //   titles.push(citazione.testo) //li aggiungo alla lista
           
-        });
+        // });
         
-        print_result(titles, 0) //format 0 = APE
+        print_result(data.citazioni, 1) //format 0 = APE
       })
-
   }
-
 });
