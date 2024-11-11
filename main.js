@@ -58,7 +58,20 @@ getref.addEventListener("click", () => { //al click di get references
   let format = dropdown.value
   if (radios[1].checked) { // se seleziona provided by user
     titles = extract_titles(format)
-    print_result(titles, format)
+    result.innerHTML = ""; 
+    titles.forEach(title => {        
+            let div = document.createElement("div");
+            div.classList.add("row", "my-3", "border-bottom", "border-black");
+            div.innerHTML = `
+                <div class="col-8 align-self-center">    
+                        <span class="m-0 text-result"">${title}</span>
+                </div>
+                <div class="col-4 d-flex align-items-center justify-content-center">
+                    <img src=${format === 1 ? "./assets/APA_icon.jpeg" : "./assets/Bibtex_icon.jpg"} alt="" class="format-logo mb-2">
+                </div>
+        `;
+            result.appendChild(div);
+    });
   }
 
 
