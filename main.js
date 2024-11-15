@@ -67,7 +67,7 @@ getref.addEventListener("click", () => { //al click di get references
                         <span class="m-0 text-result"">${title}</span>
                 </div>
                 <div class="col-4 d-flex align-items-center justify-content-center">
-                    <img src=${format === 1 ? "./assets/APA_icon.jpeg" : "./assets/Bibtex_icon.jpg"} alt="" class="format-logo mb-2">
+                    <img src=${format == 1 ? "./assets/APA_icon.jpeg" : "./assets/Bibtex_icon.jpg"} alt="" class="format-logo mb-2">
                 </div>
         `;
             result.appendChild(div);
