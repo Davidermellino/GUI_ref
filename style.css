@@ -86,6 +86,10 @@ h1{
 .cit_choice_btn{
   color: #74C0FC;
   cursor: pointer;
+  display: inline;
+}
+.selected_background{
+  background-color: red !important;
 }
 /* testo del risultato  */
 .text-result{
@@ -93,4 +97,13 @@ h1{
     max-height: 75px; /* Imposta l'altezza massima */
     overflow-y: auto;   /* Abilita lo scroll verticale */
 
+}
+
+.custom-popover {
+  --bs-popover-max-width: 500px;
+  --bs-popover-border-color: var(--primary-color);
+  --bs-popover-header-bg: var(--secondary-color);
+  --bs-popover-header-color: var(--background-color);
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: .5rem;
 }

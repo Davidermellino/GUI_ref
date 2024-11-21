@@ -1,0 +1,23 @@
+
+@article{smith2020,
+  author = {John Smith},
+  title = {Understanding Artificial Intelligence},
+  journal = {Journal of AI Research},
+  year = {2020},
+  volume = {15},
+  number = {3},
+  pages = {45-67},
+  publisher = {AI Press}
+}
+
+@book{johnson2019,
+  author = {Alice Johnson},
+  title = {Introduction to Robotics},
+  year = {2019},
+  publisher = {TechBooks Publishing},
+  address = {New York}
+}
+
+Smith, J. (2020). Understanding artificial intelligence. Journal of AI Research, 15(3), 45–67.
+
+Johnson, A. (2019). Introduction to robotics. TechBooks Publishing.
